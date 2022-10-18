@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <title>Frontend Mentor | Stats preview card component</title>
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="hero-container">
-  <div class="hero-mobile">
-    <div class="color-overlay"></div>
+  <div class="container">
+    <div class="hero-container">
+      <picture>
+        <source media="(min-width: 700px )" srcset="./images/image-header-desktop.jpg">
+        <img class="hero-img" src="./images/image-header-mobile.jpg" alt="Women sitting at computers in an office">
+      </picture>
+    </div>
+    <div class="text-container">
+      <div class="text-content">
+        <h1>Get <span class="highlight">insights</span> that help your business grow.</h1>
+        <p class="main-text"> Discover the benefits of data
+          analytics and make better decisions regarding
+          revenue, customer experience, and overall efficiency.</p>
+
+        <div class="stats">
+          <ul>
+            <li class="stat-number">10k+<span class="stat-name">companies</span></li>
+            <li class="stat-number"> 314<span class="stat-name">templates</span></li>
+            <li class="stat-number">12M+<span class="stat-name">queries</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<div class="container"> 
-<div class="content">
-  <h1 class="content-header"> Get <span class="highlight">insights</span> that help your business grow.</h1>
-  <p class="content-text">Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-    experience, and overall efficiency.</p>
-    <div class="stats">
-      <p class="stat-number">10k+<span class="stat-description">companies</span></p>
-      <p class="stat-number">314<span class="stat-description">templates</pan></p>
-      <p class="stat-number">12M+<span class="stat-description last-stat">queries</span></p>
-    </div> 
-</div>
-<div class="hero-desktop-container">
-<div class="hero-desktop">
-  <div class="color-overlay"></div>
-</div>
-</div>
- </div>
+  </div>
 
-  
 
- 
-
-  
 </body>
+
 </html>

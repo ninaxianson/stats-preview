@@ -8,163 +8,143 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     background-color: hsl(233, 47%, 7%);
-    margin: 0 auto;
+    font-size: 15px;
     min-height: 100vh;
     padding: 2rem;
+    display: grid;
+    place-content: center;
+}
+
+img {
+    background-color: hsl(277, 64%, 61%);
+    border-radius: 10px 10px 0 0;
+    display: block;
+    height: auto;
+    mix-blend-mode: overlay;
+    opacity: 80%;
+    width: 100%;
+}
+
+h1 {
+    color: hsl(0, 0%, 100%);
+    margin: 2rem auto;
     text-align: center;
-    width: 100vw;
+}
+
+.highlight {
+    color: hsl(277, 64%, 61%);
 }
 
 .container {
-    margin: 0 auto;
+    display: grid;
+    place-content: center;
 }
 
-/* Accent Colors */
-.highlight {
-    color: rgb(170, 92, 219);
-}
-.color-overlay {
-    background-color: rgba(138, 47, 195, 0.614);
-    border-radius: 10px 10px 0 0;
-    height: 100%;
-    width: 100%;
-}
-
-/* Mobile Design */
-.content {
+.text-container {
     background-color: hsl(244, 38%, 16%);
     border-radius: 0 0 10px 10px;
-    min-height: 70vh;
-    padding: 2rem;
+    font-family: "Inter";
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1rem;
 }
 
-.content-header {
-    color: hsl(0, 0%, 100%);
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-}
-
-.content-text {
+.main-text {
     color: hsla(0, 0%, 100%, 0.75);
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
     line-height: 1.5;
+    
 }
 
 .stats {
-    margin-top: 2rem;
+    color: hsl(0 0% 100%);
+    font-family: "Lexend Deca", sans-serif;
 }
 
 .stat-number {
-    color: hsl(0, 0%, 100%);
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: 1.5em;
     font-weight: 700;
 }
 
-.stat-description {
+.stats ul {
+    list-style: none;
+    padding: 2rem;
+}
+
+ul li {
+    padding: 1rem;
+}
+
+.stat-name {
     color: hsla(0, 0%, 100%, 0.6);
     display: block;
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 11px;
+    font-size: .8rem;
     font-weight: 400;
-    margin-bottom: 1.5rem;
-    padding: .3rem;
+    letter-spacing: 2px;
+    padding-top: .5rem;
     text-transform: uppercase;
 }
 
-.last-stat {
-    margin-bottom: .5rem;
-}
+@media (min-width: 700px) {
 
-/* Hero Images */
-.hero-container {
-    height: 40vh;
-    width: 100%;
-}
-
-.hero-mobile {
-    background-image: url("./images/image-header-mobile.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px 10px 0 0;
-    height: 100%;
-    width: 100%;
-}
-
-.hero-desktop {
-    display: none;
-}
-
-.hero-desktop-container {
-    display: none;
-}
-
-/* Responsive Layout--larger screens */
-
-@media (min-width: 769px) {
-    .hero-mobile {
-        display: none;
-    }
-    .hero-container {
-        display: none;
+    .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-height: 80vh;
     }
 
-    .hero-desktop-container {
+    img {
         border-radius: 0 10px 10px 0;
-        min-height: 100%;
-        width: 100%;
-        display: block;
-    }
-
-    .hero-desktop {
-        background-image: url("./images/image-header-desktop.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 0 10px 10px 0;
-        display: block;
+        grid-area: 2/2/3/3;
         height: 100%;
         width: 100%;
     }
 
-    .color-overlay {
-        border-radius: 0 10px 10px 0;
- } 
-
-    .container {
-        display: flex;
+    h1 {
+        text-align: left;
         max-width: 90%;
-        padding: 2rem;
+        margin-bottom: 2rem;
     }
 
-    .content {
+    .text-container {
         border-radius: 10px 0 0 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: auto;
-        text-align: center;
-        width: 100%;
+        grid-area: 1/1/2/2;
+        height: 100%;
+        padding: 2rem;
+        place-content: center;
+        text-align: left;
+        width: 100%;   
     }
-
-    .content-header {
-        font-size: 2rem;
-    }
-    .content-text {
+    
+    .main-text {
+        line-height: 1.6;
         margin: 0 auto;
-        width: 80%;  
+        max-width: 90%;
+        text-align: left;   
     }
 
     .stats {
         display: flex;
-        gap: 1.5rem;
-        justify-content: space-between;
-        margin: 4rem auto 2rem auto;
-        text-align: justify;
-        width: 80%;
+        margin-top: 2rem; 
+        max-width: 90%; 
     }
+   
+    .stats ul {
+        display: flex;
+        gap: .5rem;
+        justify-content: space-between;
+        margin: 3rem auto 0 auto;
+        padding: 0;
+        width: 90%;
+}
+
+    li.stat-number {
+        padding: 0;
+        font-size: 1.2rem;
+        font-weight: 400;
+}
+
 }
